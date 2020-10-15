@@ -3,39 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>The Cloud Dreamer's Website</title>
+  <title>Team Cloud Dreamers Website</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel='icon' href='https://pixabay.com/vectors/world-earth-planet-continents-154527/' type='image/x-icon' sizes="16x16" />
 </head>
 <body>
-  <div>
- <div class="jumbotron">
-  <img src="http://www.vsuspectator.com/wp-content/uploads/sites/55/2017/10/Top-Party-Schools-main-image-660x330.jpg" class="img-fluid" alt="Responsive image">
-      
-
-    
-            <h1>Welcome to Cloud Dreamer's application</h1>
-    </div>
-<h2> Check out all these cool events my friend! </h2>
+  <div >
+      <h1 class="jumbotron text-center">Welcome to Cloud Dreamers application</h1>
     {{{body}}}
 </div>
-<div>
+<div class="container">
   <h2>Add an event</h2>
-    <form action="/event" method="post">
-       What is the title of your event? <input name="title" type="text" /> <br />
-       Provide a brief desctiption of your event. <input name="description" type="text" /> <br />
-       <br />
-        <input type="submit" name="submit" value="submit" />
+    <form class="form-horizontal" action="/event" method="post">
+    <div class="form-group">
+ 
+            <label class="control-label col-sm-2" for="title">Title:</label>
+            <div class="col-sm-6">
+                <input type="text" name="title" class="form-control" id="title">
+            </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="description">Description:</label>
+         <div class="col-sm-6">
+            <input type="text" name="description" class="form-control" id="description">
+         </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <input class="btn btn-primary" type="submit" name="submit" value="Submit" />
+      </div>
+    </div>
+        
     </form>
   </div>
-
-<blockquote class="blockquote text-center">
-  <p class="mb-0">To achieve great things, two things are needed: a plan and not quite enough time.</p>
-  <footer class="blockquote-footer">Leonard Bernstein as per <cite title="The Internet">The Internet</cite></footer>
-</blockquote>
-
 </body>
 </html>
-
