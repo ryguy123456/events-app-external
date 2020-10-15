@@ -1,19 +1,19 @@
-<div class="container">
-  <h2>Event List</h2>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Event Title</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#events}}
-      <tr>
-        <td>{{ title }}</td>
-        <td>{{ description }}</td>
-      </tr>
-    {{/events}}
-    </tbody>
-  </table>
-</div>
+<ul >
+  {{#events}}
+    <li>
+        <h2>{{ title }}</h2>
+        <p>{{ description }}</p>
+        <p>Location: {{ location }}</p>
+        <p>Likes: {{ likes }}
+        <form method="POST" action="/event/like">
+        <input type="hidden" value="{{id}}" name="id">
+        <input type="submit" value="Like">
+        </form>
+        <form method="POST" action="/event/unlike">
+        <input type="hidden" value="{{id}}" name="id">
+        <input type="submit" value="UN-Like">
+        </form>
+        </p>
+    </li>
+  {{/events}}
+</ul>
