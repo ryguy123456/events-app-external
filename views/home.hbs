@@ -1,19 +1,35 @@
-<ul >
-  {{#events}}
-    <li>
-        <h2>{{ title }}</h2>
-        <p>{{ description }}</p>
-        <p>Location: {{ location }}</p>
-        <p>Likes: {{ likes }}
-        <form method="POST" action="/event/like">
-        <input type="hidden" value="{{id}}" name="id">
-        <input type="submit" value="Like">
-        </form>
-        <form method="POST" action="/event/unlike">
-        <input type="hidden" value="{{id}}" name="id">
-        <input type="submit" value="UN-Like">
-        </form>
-        </p>
-    </li>
-  {{/events}}
-</ul>
+<div class="container">
+  <h2>Event List</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Event Title</th>
+        <th>Description</th>
+        <th>Likes</th>
+        <th>Like</th>
+        <th>Unlike</th> 
+      </tr>
+    </thead>
+    <tbody>
+      {{#events}}
+      <tr>
+        <td>{{ title }}</td>
+        <td>{{ description }}</td>
+        <td>{{ likes }}</td>
+        <td> 
+            <form method="POST" action="/event/like">
+                <input type="hidden" value="{{id}}" name="id">
+                <input type="submit" class="btn btn-success" value="Like">
+            </form>
+        </td>
+        <td> 
+            <form method="POST" action="/event/unlike">
+                <input type="hidden" value="{{id}}" name="id">
+                <input type="submit" class="btn btn-warning" value="Un-Like">
+            </form>
+        </td>
+      </tr>
+    {{/events}}
+    </tbody>
+  </table>
+</div>
